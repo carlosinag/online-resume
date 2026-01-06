@@ -6,13 +6,13 @@
 }
 :root {
 	--primary-color: blue;
-	--text-color: #45413c;
+	--text-color: #1b1002;
 }
 html {
 	font-size: 10px;
 }
 body {
-	font-family: Inter, sans-serif;
+	font-family: Cambria;
 	background-color: #BCD2E8;
 	color: black;
 }
@@ -28,6 +28,7 @@ a {
 	font-size: 1.5rem;
 	font-weight: 400;
 	color: var(--text-color);
+    text-align: justify;
 }
 .title {
 	color: var(--primary-color);
@@ -53,10 +54,32 @@ a {
 }
 .profile_description {
     margin-top: 1rem;
-	font-size: 1.25rem;
+	font-size: 2rem;
 	font-weight: 400;
 	color: var(--text-color);
     text-align: justify;
+}
+.profile_container {
+	background-color: rgb(241, 232, 232);
+	padding: 1rem;
+	border-radius: 1rem;
+}
+.group-1 {
+	background-color: rgb(241, 232, 232);
+	padding: 1rem;
+	border-top-left-radius: 1rem;
+	border-bottom-left-radius: 1rem;
+}
+.group-2 {
+	background-color: rgb(241, 232, 232);
+	padding: 1rem;
+	border-top-right-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+}
+.group-3 {
+	background-color: rgb(241, 232, 232);
+	padding: 1rem;
+	border-radius: 1rem;
 }
 
 
@@ -68,7 +91,7 @@ a {
 	padding: 5rem;
 	background: white;
 	grid-template-columns: 1fr 1fr;
-	gap: 4rem;
+	border-radius: 2rem;
 }
 @media only screen and (max-width: 768px) {
 	.container {
@@ -89,7 +112,7 @@ a {
 	gap: 5rem;
 }
 .group-3 {
-	max-width: 700px;
+	max-width: 100%;
 	width: 100%;
 	margin: 0 auto;
 	grid-column: 1/-1;
@@ -115,6 +138,8 @@ a {
 }
 .profileimg {
 	max-width: 250px;
+	border-radius: 12px;
+	overflow: hidden;
 }
 .firstName {
 	color: black;
@@ -145,6 +170,7 @@ a {
 .me_list {
 	margin-top: 1rem;
 	line-height: 2;
+	white-space: pre-wrap;
 }
 
 .ref_item {
@@ -156,8 +182,8 @@ a {
 }
 .reflist {
 	margin-top: 2rem;
-	margin-left: 2rem;
-	line-height: 2;
+	line-height: 1.9;
+	white-space: pre-wrap;
 }
 .edu_item {
 	margin-top: 2rem;
@@ -167,15 +193,27 @@ a {
 }
 .skills_list {
     margin-top: 2rem;
-	margin-left: 2rem;
-	line-height: 2;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	padding-left: 0;
+}
+.skills_list li {
+	list-style: none;
+	background: rgba(0, 0, 255, 0.08);
+	color: var(--primary-color);
+	border: 1px solid rgba(0, 0, 255, 0.15);
+	padding: 0.6rem 1.2rem;
+	border-radius: 999px;
+	font-size: 1.4rem;
+	font-weight: 600;
 }
 .achievements_item {
 	margin-top: 2rem;
 }
 .icons {
-    color: black;
-    font-size: 3rem;   
+    color: var(--primary-color);
+    font-size: 2.6rem;   
 }
 .interest_items {
 	margin-top: 2rem;
@@ -192,6 +230,9 @@ a {
 	justify-content: center;
 	gap: 0.5rem;
 	color: var(--text-color);
+	padding: 1rem 1.4rem;
+	border: 1px solid rgba(0,0,0,0.08);
+	border-radius: 12px;
 }
 
 hr {
@@ -211,8 +252,46 @@ hr {
 	margin-top: 2rem;
 	line-height: 2;
 }
+.contact_info .description,
+.social_items .description {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+}
 @media only screen and (max-width: 768px) {
 	hr {
 		margin: 0 auto;
+	}
+}
+@media only screen and (max-width: 480px) {
+	.container {
+		padding: 2rem;
+		gap: 3rem;
+	}
+	.group-1,
+	.group-2 {
+		gap: 3.5rem;
+	}
+	.profileimg {
+		max-width: 160px;
+		margin: 0 auto;
+	}
+	.title {
+		font-size: 1.8rem;
+	}
+	.description {
+		font-size: 1.4rem;
+	}
+	.item_title {
+		font-size: 1.6rem;
+	}
+	.icons {
+		font-size: 2.4rem;
+	}
+	.reflist {
+		margin-left: 0;
+	}
+	.skills_list {
+		justify-content: flex-start;
 	}
 }
